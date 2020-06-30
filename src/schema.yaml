@@ -43,9 +43,13 @@ properties:
                   days:
                     type: array
                     description: which days prior to send card reminder
+                    items:
+                      type: integer
                   hours:
                     type: array
                     description: which hours to send card reminder
+                    items:
+                      type: integer
           message:
             type: object
             additionalProperties: False
@@ -55,6 +59,8 @@ properties:
               schedule:
                 type: array
                 description: which hours to send message reminder
+                items:
+                  type: integer
   birthdays:
     items:
       type: object

@@ -17,7 +17,6 @@ config:
       schedule:
         - 8
         - 16
-        - 15
 birthdays:
   - name: Clare
     full_name: Clare mcTest
