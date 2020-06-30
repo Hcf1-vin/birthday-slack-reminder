@@ -1,0 +1,41 @@
+
+config:
+  slack:
+    webhook_url: https://hooks.slack.com/services/-webhook-url-goes-here
+  alerts:
+    send_card:
+      schedule: 
+        days:
+          - 7
+          - 5
+          - 3
+          - 1
+        hours:
+          - 8
+          - 15
+    message:
+      schedule:
+        - 8
+        - 16
+        - 15
+birthdays:
+  - name: Clare
+    full_name: Clare mcTest
+    day: 12
+    month: 2
+    year: 1987
+    card: False
+    address: 67 Street, Town, Postcode
+    disabled: False
+  - name: James
+    full_name: James McTest
+    day: 30
+    month: 6
+    year: 1989
+    card: True
+    address: 67 Street, Town, Postcode
+    disabled: False
+  - name: Kevin
+    full_name: Kevin Smith
+    day: 30
+    month: 9

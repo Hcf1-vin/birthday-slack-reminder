@@ -1,0 +1,85 @@
+info:
+  title: conf validation
+  description: configuration validation
+
+type: object
+properties:
+  config:
+    type: object
+    additionalProperties: False
+    properties:
+      slack:
+        type: object
+        additionalProperties: False
+        required:
+          - webhook_url
+        properties:
+          webhook_url:
+            type: string
+          channel:
+            type: string
+            default: "#birthday"
+          icon:
+            type: string
+            default: ":birthday:"
+          bot_name:
+            type: string
+            default: "birthday"
+      alerts:
+        type: object
+        additionalProperties: False
+        properties:
+          send_card:
+            type: object
+            additionalProperties: False
+            properties:
+              schedule:
+                type: object
+                additionalProperties: False
+                required:
+                  - days
+                  - hours
+                properties:
+                  days:
+                    type: array
+                    description: which days prior to send card reminder
+                  hours:
+                    type: array
+                    description: which hours to send card reminder
+          message:
+            type: object
+            additionalProperties: False
+            required:
+              - schedule
+            properties:
+              schedule:
+                type: array
+                description: which hours to send message reminder
+  birthdays:
+    items:
+      type: object
+      additionalProperties: false
+      required:
+        - name
+        - full_name
+        - day
+        - month
+      properties:
+        name:
+          type: string
+        full_name: 
+          type: string
+        day:
+          type: integer
+        month:
+          type: integer
+        year:
+          type: integer
+        card:
+          type: boolean
+          default: False
+        address:
+          type: string
+        disabled:
+          type: boolean
+          default: False
